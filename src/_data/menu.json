@@ -1,0 +1,97 @@
+{
+  "categories": [
+    {
+      "id": "breakfast",
+      "title": "Breakfast",
+      "items": [
+        { "name": "Breakfast Burritos", "desc": "Comes with beans, potatoes, eggs, and your choice of Chorizo, Bacon, or Sausage.", "variants": [{ "label": "", "price": "$9.00" }] },
+        { "name": "Steak and Eggs Breakfast Burrito", "desc": "Beans, potatoes, eggs, steak, sautéed onions, and cheese.", "variants": [{ "label": "", "price": "$10.99" }] },
+        { "name": "Breakfast Tacos", "desc": "Beans, potatoes, eggs, and your choice of Chorizo, Bacon, or Sausage.", "variants": [{ "label": "", "price": "$3.50" }] },
+        { "name": "Breakfast Gordita", "desc": "Handmade corn shell stuffed with beans, eggs, cheese, and your choice of Chorizo, Bacon, or Sausage.", "variants": [{ "label": "", "price": "$4.50" }] },
+        { "name": "Breakfast Quesadilla", "desc": "Cheese, eggs and your choice of Chorizo, Sausage, Bacon or a la Mexicana (onions, jalapeños, tomato).", "variants": [{ "label": "", "price": "$8.99" }] },
+        { "name": "Nopales “Cactus”", "desc": "Cactus scrambled with eggs, served with a side of beans, potatoes, and tortillas.", "variants": [{ "label": "", "price": "$9.99" }] },
+        { "name": "Huevos Rancheros", "desc": "2 Eggs on corn tortillas with ranchero salsa, served with beans, potatoes, and corn tortillas.", "variants": [{ "label": "", "price": "$9.99" }] },
+        { "name": "Huevos con Chorizo", "desc": "Eggs scrambled with chorizo, served with beans, potatoes, and corn tortillas.", "variants": [{ "label": "", "price": "$9.99" }] },
+        { "name": "Huevos a la Mexicana", "desc": "Eggs scrambled with onions, tomatoes, jalapeños, served with beans, potatoes, and corn tortillas.", "variants": [{ "label": "", "price": "$9.99" }] },
+        { "name": "American Breakfast", "desc": "2 Eggs any style, potatoes, toast, and your choice of Bacon or Sausage Patties.", "variants": [{ "label": "", "price": "$9.99" }] }
+      ]
+    },
+    {
+      "id": "vegan",
+      "title": "Vegan / Vegetarian",
+      "items": [
+        { "name": "Vegan Chorizo Breakfast Burrito", "desc": "Beans, potatoes, vegan chorizo or a la Mexicana (onions, jalapeños, tomatoes).", "variants": [{ "label": "", "price": "$10.50" }, { "label": "Add guacamole", "price": "+$0.75" }] },
+        { "name": "Vegan Burrito", "desc": "Vegan chorizo or vegan Al pastor with beans, lettuce, tomato, cilantro, onions.", "variants": [{ "label": "", "price": "$10.50" }] },
+        { "name": "Vegetarian Burrito", "desc": "Beans, rice, lettuce, tomato, cilantro, onion, cheese.", "variants": [{ "label": "", "price": "$9.50" }] },
+        { "name": "Vegan Taco", "desc": "Choice of vegan chorizo or vegan Al pastor.", "variants": [{ "label": "", "price": "$2.99" }] },
+        { "name": "Vegetarian Taco", "desc": "Beans, lettuce, tomato, cilantro, onion.", "variants": [{ "label": "", "price": "$2.85" }] },
+        { "name": "Vegan Taco Plate", "desc": "2 tacos with vegan chorizo or vegan Al pastor, served with beans and chips.", "variants": [{ "label": "", "price": "$10.99" }] }
+      ]
+    },
+    {
+      "id": "specials",
+      "title": "Specials",
+      "items": [
+        { "name": "Menudo (Large)", "desc": "Beef tripe soup with hominy, cilantro, onion, lime, and corn tortillas. (Saturday only)", "variants": [{ "label": "", "price": "$10.00" }] }
+      ]
+    },
+    {
+      "id": "drinks",
+      "title": "Drinks",
+      "items": [
+        { "name": "Coffee (refills)", "desc": "", "variants": [{ "label": "", "price": "$1.99" }] },
+        { "name": "Orange Juice", "desc": "", "variants": [{ "label": "", "price": "$2.50" }] },
+        { "name": "Milk", "desc": "", "variants": [{ "label": "", "price": "$2.50" }] },
+        { "name": "Bottled Sodas", "desc": "", "variants": [{ "label": "", "price": "$2.25" }] },
+        { "name": "Can Sodas", "desc": "", "variants": [{ "label": "", "price": "$1.50" }] },
+        { "name": "Root Beer", "desc": "", "variants": [{ "label": "", "price": "$3.00" }] },
+        { "name": "Horchata & Lemonade", "desc": "", "variants": [{ "label": "", "price": "$2.59" }] }
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "Lunch",
+      "items": [
+        { "name": "Birria Taco", "desc": "Flavored corn tortillas with cheese, pulled beef, cilantro, onion.", "variants": [{ "label": "", "price": "$3.25" }] },
+        { "name": "3 Birria Egg Rolls", "desc": "With birria beef, cilantro, onions, guajillo salsa, cheese. Add consomé cup +$2.50.", "variants": [{ "label": "", "price": "$10.99" }] },
+        { "name": "Birria Taco Plate", "desc": "2 Birria tacos with rice & beans. Add consomé +$2.50.", "variants": [{ "label": "", "price": "$12.99" }] },
+        { "name": "3 Birria Tacos", "desc": "Add consomé soup +$2.50.", "variants": [{ "label": "", "price": "$11.99" }] },
+        { "name": "2 Hard Shell Tacos", "desc": "Crispy shell with ground beef, lettuce, cheese.", "variants": [{ "label": "", "price": "$6.00" }] },
+        { "name": "Taco Salad", "desc": "Ground beef, beans, lettuce, tomato, cheese, cilantro, onions, sour cream in a tortilla bowl. (Steak +$1)", "variants": [{ "label": "", "price": "$10.99" }] },
+        { "name": "Torta - Mexican Sandwich", "desc": "Telera bun with beans, toppings, and choice of steak/chicken/pork al pastor/ground beef.", "variants": [{ "label": "", "price": "$10.99" }] },
+        { "name": "Gordita", "desc": "Corn shell with beans, sour cream, queso fresco, cilantro, onion + choice of meat.", "variants": [{ "label": "", "price": "$4.50" }] },
+        { "name": "Quesadilla", "desc": "Cheese or chicken, served with lettuce, tomato, cilantro, onion, sour cream. (Steak +$1)", "variants": [{ "label": "", "price": "$9.99" }] },
+        { "name": "Enchilada Plate", "desc": "3 enchiladas (chicken or ground beef) with ranchero salsa, toppings, rice & beans. (Steak +$1)", "variants": [{ "label": "", "price": "$12.99" }] },
+        { "name": "2 Tostadas", "desc": "Fried tortillas with beans, ground beef, lettuce, tomato, cheese, cilantro, onion, sour cream.", "variants": [{ "label": "", "price": "$10.00" }] },
+        { "name": "Burrito", "desc": "Lettuce, tomato, cilantro, onion, cheese, beans, sour cream, choice of Chicken/Pork Al-Pastor/Ground Beef. (Steak +$1)", "variants": [{ "label": "", "price": "$9.99" }] },
+        { "name": "Wet Burrito", "desc": "Ground beef & cheese, topped with ranchero salsa & toppings, with rice & beans. (Steak +$1)", "variants": [{ "label": "", "price": "$11.99" }] },
+        { "name": "Tacos Mexican Style", "desc": "Corn tortillas with cilantro, onion + choice of meat.", "variants": [{ "label": "", "price": "$3.25" }] },
+        { "name": "Taco Ida’s Way", "desc": "2 crispy tortillas with carne asada, cheese, ranchero salsa, cilantro, onion.", "variants": [{ "label": "", "price": "$4.75" }] },
+        { "name": "The Tom Taco", "desc": "Ground beef, lettuce, cheese on a flour tortilla.", "variants": [{ "label": "", "price": "$3.25" }] },
+        { "name": "Taco 10 Pack", "desc": "5 Tom tacos + 5 Mexican style tacos, choice of meat.", "variants": [{ "label": "", "price": "$30.00" }] },
+        { "name": "5 Mini Street Tacos", "desc": "Choice of chicken, Al pastor, Chorizo, or Ground Beef with onion & cilantro.", "variants": [{ "label": "", "price": "$10.99" }] },
+        { "name": "Taco Plate", "desc": "2 tacos Mexican style + rice & beans.", "variants": [{ "label": "", "price": "$11.99" }] },
+        { "name": "Nacho Salad", "desc": "Chips with ground beef, cheese, lettuce, tomato, cilantro, onions, sour cream. (Steak +$1)", "variants": [{ "label": "", "price": "$12.00" }] },
+        { "name": "Nacho Fries", "desc": "Fries with queso, ground beef, tomato, cilantro, onions, jalapeños, sour cream. (Steak +$1)", "variants": [{ "label": "", "price": "$10.99" }] },
+        { "name": "The Big Mig Taco", "desc": "2lb taco with fries, beef, steak, queso, toppings, sour cream, guac, jalapeños.", "variants": [{ "label": "", "price": "$16.00" }] },
+        { "name": "Deluxe Tacos", "desc": "Choice of carnitas, steak, chicken, ground beef. Topped with pico & avocado.", "variants": [{ "label": "", "price": "$3.99" }] },
+        { "name": "Chimichanga", "desc": "Ground beef or chicken in fried tortilla. Topped with queso, sour cream, lettuce, tomato, guacamole.", "variants": [{ "label": "", "price": "$12.99" }] }
+      ]
+    },
+    {
+      "id": "sides",
+      "title": "Extra Sides",
+      "items": [
+        { "name": "Rice", "desc": "", "variants": [{ "label": "", "price": "$2.50" }] },
+        { "name": "Refried Beans", "desc": "", "variants": [{ "label": "", "price": "$2.50" }] },
+        { "name": "Guacamole", "desc": "", "variants": [{ "label": "", "price": "$5.00" }] },
+        { "name": "Queso", "desc": "", "variants": [{ "label": "", "price": "$5.00" }] },
+        { "name": "Elote Cup", "desc": "", "variants": [{ "label": "", "price": "$5.00" }] },
+        { "name": "Cinnamon Churros", "desc": "", "variants": [{ "label": "", "price": "$4.00" }] },
+        { "name": "Chips & Salsa (to-go, half order)", "desc": "", "variants": [{ "label": "", "price": "$5.00" }] },
+        { "name": "Large Chips & Salsa (family size)", "desc": "", "variants": [{ "label": "", "price": "$11.99" }] },
+        { "name": "Chips & Salsa (dine-in only)", "desc": "", "variants": [{ "label": "", "price": "$3.00" }] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{# Homepage component: Restaurant Info #}
+{% set r = restaurant %}
+<section id="ri" class="ri" aria-labelledby="ri-title">
+  <div class="ri__grid">
+    <div class="ri__about">
+      <h2 id="ri-title">{{ r.name }}</h2>
+      <p class="ri__status" data-open-status>
+        <span class="ri__pill" data-pill>Checking hours…</span>
+      </p>
+      <p class="ri__text">{{ r.about }}</p>
+
+      <div class="ri__actions">
+        {% if r.phone %}<a class="ri__btn" href="tel:{{ r.phone | replace(' ', '') }}">{{ r.phone }}</a>{% endif %}
+        {% if r.mapUrl %}<a class="ri__btn ri__btn--ghost" href="{{ r.mapUrl }}" target="_blank" rel="noopener">Directions</a>{% endif %}
+      </div>
+    </div>
+
+    <div class="ri__meta">
+      <div class="ri__block">
+        <h3>Visit</h3>
+        <address class="ri__addr">
+          {{ r.street }}<br/>
+          {{ r.city }}, {{ r.state }} {{ r.zip }}
+        </address>
+        {% if r.email %}<a class="ri__link" href="mailto:{{ r.email }}">{{ r.email }}</a>{% endif %}
+      </div>
+
+      <div class="ri__block">
+        <h3>Hours</h3>
+        <ul class="ri__hours">
+          {% for h in r.hours %}
+            <li data-day="{{ h.day }}">
+              <span class="ri__d">{{ h.day }}</span>
+              <span class="ri__t">{{ h.open }}–{{ h.close }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        <small class="ri__note">Hours may vary on holidays.</small>
+      </div>
+    </div>
+  </div>
+
+  {# Structured data for SEO #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": {{ r.name | dump }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ r.street | dump }},
+    "addressLocality": {{ r.city | dump }},
+    "addressRegion": {{ r.state | dump }},
+    "postalCode": {{ r.zip | dump }},
+    "addressCountry": "US",
+  "telephone": {{ (r.phone or "") | dump }},
+  "email": {{ (r.email or "") | dump }},
+  "url": "/",
+  "servesCuisine": "Mexican",
+  "openingHoursSpecification": [
+    {% for h in r.hours %}
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "{{ h.day }}",
+      "opens": "{{ h.open }}",
+      "closes": "{{ h.close }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+</section>

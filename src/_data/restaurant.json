@@ -1,0 +1,21 @@
+{
+  "name": "La Familia Café",
+  "about": "Family-owned Mexican café in downtown Kalamazoo, serving authentic breakfast and lunch in a warm, vibrant setting.",
+  "phone": "(269) 312-8014",
+  "email": "",
+  "street": "224 West Michigan Avenue",
+  "city": "Kalamazoo",
+  "state": "MI",
+  "zip": "49007",
+  "mapUrl": "https://maps.google.com/?q=224+West+Michigan+Avenue+Kalamazoo+MI+49007",
+  "timezone": "America/Detroit",
+  "hours": [
+    { "day": "Mon", "open": "8am", "close": "3pm" },
+    { "day": "Tue", "open": "8am", "close": "3pm" },
+    { "day": "Wed", "open": "8am", "close": "3pm" },
+    { "day": "Thu", "open": "8am", "close": "3pm" },
+    { "day": "Fri", "open": "8am", "close": "3pm" },
+    { "day": "Sat", "open": "8am", "close": "2pm" },
+    { "day": "Sun", "open": "", "close": "" }
+  ]
+}

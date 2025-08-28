@@ -14,21 +14,20 @@
         <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
         <a class="logo" aria-label="click to go to home page" href="/">
             <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-            <img class="light" aria-hidden="true" src="/assets/images/logo-light.png" decoding="async" alt="logo">
+            <img class="light" aria-hidden="true" src="/assets/images/la_familia_logo.webp" decoding="async" alt="logo">
 
             <!--Dark Colored Logo-->
-            <img class="dark" aria-hidden="true" src="/assets/images/logo-blue.png" decoding="async" loading="lazy" alt="logo">
+            <img class="dark" aria-hidden="true" src="/assets/images/la_familia_logo.webp" decoding="async" loading="lazy" alt="logo">
         </a>
 
         <!--Mobile Nav toggle-->
         <button class="hamburger-menu" aria-expanded="false" aria-controls="navbar-menu">
-            <span class="visually-hidden">Menu</span>
             <span aria-hidden="true"></span>
         </button>
 
         <!--Main Nav-->
 <nav id="navbar-menu" aria-label="main navigation">
-    <ul>
+    <!-- <ul>
         {%- for entry in navPages %}
             <li class="{% if entry.title == 'Services' %}dropdown{% endif %}" id="{{ entry.title }}" >
                     <a 
@@ -39,6 +38,28 @@
                     </a>
             </li>
         {%- endfor %}
+    </ul> -->
+        <ul>
+        <li>
+            <a href="/">
+            Home
+            </a>
+        </li>
+        <li>
+            <a href="#menu">
+            Menu
+            </a>
+        </li>
+        <li>
+            <a href="#ri">
+            About
+            </a>
+        </li>
+        <li>
+            <a href="/contact">
+            Contact
+            </a>
+        </li>
     </ul>
 </nav>
 

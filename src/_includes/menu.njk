@@ -1,0 +1,61 @@
+{# Re-usable Menu block. Usage: {% include "menu.njk" %} #}
+{% set cats = menu.categories %}
+
+<div class="menu-wrap">
+  <span class="badge">THE MENU</span>
+
+  <div class="menu" id="menu" data-active="{{ cats[0].id }}">
+    <div class="tabs" role="tablist" aria-label="Menu Categories">
+      {% for c in cats %}
+        <button
+          class="tab"
+          id="tab-{{ c.id }}"
+          role="tab"
+          data-panel="{{ c.id }}"
+          aria-controls="panel-{{ c.id }}"
+          aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+          tabindex="{% if loop.first %}0{% else %}-1{% endif %}"
+        >{{ c.title }}</button>
+      {% endfor %}
+    </div>
+
+    {% for c in cats %}
+      <section
+        class="panel"
+        id="panel-{{ c.id }}"
+        role="tabpanel"
+        aria-labelledby="tab-{{ c.id }}"
+        aria-hidden="{% if loop.first %}false{% else %}true{% endif %}"
+      >
+        <div class="group">
+          <h3>{{ c.title }}</h3>
+          {% for it in c.items %}
+            <div class="item">
+              <div>
+                <p class="item-title">{{ it.name }}</p>
+                {% if it.desc %}
+                  <p class="item-sub">{{ it.desc }}</p>
+                {% endif %}
+
+                {% if it.variants and (it.variants | length) > 1 %}
+                  <ul class="variants">
+                    {% for v in it.variants %}
+                      <li>
+                        <span class="vlabel">{{ v.label }}</span>
+                        <span class="vprice">{{ v.price }}</span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+
+              {% if it.variants and (it.variants | length) == 1 %}
+                <div class="price">{{ it.variants[0].price }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</div>
