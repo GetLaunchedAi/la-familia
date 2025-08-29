@@ -484,141 +484,150 @@
 /*-- -------------------------- -->
 <---          Reviews           -->
 <--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0em) {
-  #reviews {
-    /* Centers the button */
-    text-align: center;
-    padding: var(--sectionPadding);
+  /* ====== Base look (flex-based slider) ====== */
+  :root{
+    --rv-bg:#fff;
+    --rv-ink:#111;
+    --rv-sub:#555;
+    --rv-border:#eee;
+    --rv-card:#fafafa;
+    --rv-btn:#111827;
+    --rv-btn-ink:#fff;
+
+    /* brand hooks (optional): */
+    --primary:#caa548;
+    --primaryShade:#a5823a;
+    --primaryDark:#6b5824;
   }
-  #reviews .cs-container {
+
+  .rv{
+    position:relative;
+    max-width: 900px;
+    margin: 2.5rem auto 0 auto;
+    /* padding: 1rem 2rem 4rem 2rem ; */
+    padding: clamp(1rem, 3vw, 1.25rem);
+    /* background: var(--primary); */
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .rv__title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .rv__viewport{
+    overflow: hidden;
     width: 100%;
-    max-width: 69rem;
-    margin: auto;
   }
-  #reviews .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: .1em;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    display: block;
-  }
-  #reviews .cs-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
-    text-align: center;
-    max-width: 43.75rem;
-    margin: 0 auto 1rem;
-    color: var(--headerColor);
-    position: relative;
-  }
-  #reviews .cs-text {
-    font-size: var(--bodyFontSize);
-    line-height: 1.5rem;
-    text-align: center;
+
+  .rv__track{
+    /* FLEX, not grid */
+    display: flex;
+    gap: 0; /* slides are full-width */
     width: 100%;
-    max-width: 40.625rem;
-    margin: 0 auto;
-    /* 88px - 104px */
-    margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
-    color: var(--bodyTextColor);
-  }
-  #reviews .cs-card-group {
+    will-change: transform;
+    transition: transform 400ms ease;
     padding: 0;
-    /* 48px - 64px */
-    margin: 0 auto clamp(3rem, 5vw, 4rem);
-  }
-  #reviews .cs-item {
-    text-align: left;
-    list-style: none;
-    width: 100%;
-    max-width: 33.875rem;
-    margin: 0 auto 4rem;
-    /* Padding L & R - 16px - 32px */
-    padding: 3.75rem clamp(1rem, 3.2vw, 2rem) 0;
-    /* 32px - 40px */
-    padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
-    box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
-    border-radius: 0.25rem;
-    background: #fff;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    /* Prevents padding from affecting height & width */
-    box-sizing: border-box;
-  }
-  #reviews .cs-item:last-of-type {
-    margin-bottom: 0;
-  }
-  #reviews .cs-item-img {
-    width: 5rem;
-    height: 5rem;
-    position: absolute;
-    top: -2.5rem;
-  }
-  #reviews .cs-item-p {
-    font-size: 1rem;
-    line-height: 1.5em;
-    margin: 0 0 1.25rem;
-    padding-bottom: 1.25rem;
-    color: var(--bodyTextColor);
-    border-bottom: 1px solid #E8E9EC;
-  }
-  #reviews .cs-reviewer {
-    font-size: 1rem;
-    line-height: 1.5em;
-    font-weight: 700;
-    width: 40%;
-    margin: 0 auto 0 0;
-    display: block;
-    color: var(--headerColor);
-  }
-  #reviews .cs-desc {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--label);
-    display: block;
-  }
-  #reviews .cs-item-stars {
-    width: 6rem;
-    height: 1rem;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48em) {
-  #reviews .cs-card-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-  #reviews .cs-item {
-    /* reset margin so it won't interfere with flexbox */
     margin: 0;
+    list-style: none;
   }
+
+  .rv__slide{
+    flex: 0 0 100%; /* each slide takes full viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .rv__card{
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    width: min(800px, 100%);
+    margin: 0;
+    /* background: blue; */
+    border:1px solid var(--primary);
+    border-radius: 12px;
+    padding: clamp(1rem, 3.5vw, 1.5rem);
+  }
+
+  .rv__avatar{
+    width: 64px; height: 64px; border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+  }
+
+  .rv__quote{
+    margin: 0;
+    color: var(--rv-ink);
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    line-height: 1.55;
+  }
+
+  .rv__meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    align-items: baseline;
+    color: var(--rv-sub);
+  }
+  .rv__name{ font-weight: 600; color: var(--rv-ink); }
+  .rv__role{ opacity: .85; }
+
+  .rv__btn{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--primaryDark);
+    background: var(--primary);
+    color: white;
+    display: grid; place-items: center;
+    cursor: pointer;
+  }
+
+  .rv__btn span {
+  font-size: 2rem; /* try 2rem–3rem */
+  line-height: 1;
 }
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #reviews .cs-title,
-  body.dark-mode #reviews .cs-text,
-  body.dark-mode #reviews .cs-item-p,
-  body.dark-mode #reviews .cs-reviewer {
-    color: var(--bodyTextColorWhite);
+  .rv__btn--prev{ left: .5rem; }
+  .rv__btn--next{ right: .5rem; }
+
+  .rv__btn:hover{ background: var(--primaryDark); }
+  .rv__btn:focus-visible{
+    outline: 3px solid color-mix(in oklab, var(--primary) 60%, white);
+    outline-offset: 2px;
   }
-  body.dark-mode #reviews .cs-item {
-    background: var(--medium);
+
+  /* Dark mode (if you use body.dark-mode) */
+  body.dark-mode :root{
+    /* noop: keep globals; or move dark vars here if you want */
   }
-  body.dark-mode #reviews .cs-desc {
-    color: var(--primaryLight);
+  body.dark-mode .rv{
+    background: var(--dark, #082032);
+    border-color: var(--accent, #334756);
   }
-}
+  body.dark-mode .rv__card{
+    background: var(--medium, #2C394B);
+    border-color: var(--accent, #334756);
+  }
+  body.dark-mode .rv__quote{ color: #e5e7eb; }
+  body.dark-mode .rv__meta{ color: #cbd5e1; }
+  body.dark-mode .rv__name{ color: #f3f4f6; }
+  body.dark-mode .rv__btn{
+    background: var(--primary, #caa548);
+    color: #111;
+    border-color: var(--accent, #334756);
+  }
+  body.dark-mode .rv__btn:hover{ background: var(--primaryShade, #a5823a); color:#fff; }
+
+  /* Respect Reduce Motion: disable slide animation */
+  @media (prefers-reduced-motion: reduce){
+    .rv__track{ transition: none; }
+  }
 /*-- -------------------------- -->
 <---    Final Call To Action    -->
 <--- -------------------------- -*/

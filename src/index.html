@@ -32,11 +32,6 @@ eleventyNavigation:
     <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/restaurant-space.jpeg" alt="restaurant" width="2250" height="1500" aria-hidden="true">
   </picture>
 </section>
-<!-- ============================================ -->
-<!--                Restaurant Info               -->
-<!-- ============================================ -->
-{% include "restaurant-info.njk" %}
-<script src="/assets/js/restaurant-info.js" defer></script>
 
 <!-- ============================================ -->
 <!--                    Menu                      -->
@@ -131,50 +126,73 @@ eleventyNavigation:
     </div>
   </div>
 </section>
+<!-- ============================================ -->
+<!--                Restaurant Info               -->
+<!-- ============================================ -->
+{% include "restaurant-info.njk" %}
+<script src="/assets/js/restaurant-info.js" defer></script>
 
 <!-- ============================================ -->
 <!--                   Reviews                    -->
 <!-- ============================================ -->
 
-<section id="reviews">
-  <div class="cs-container">
-    <span class="cs-topper">Guest Testimonials</span>
-    <h2 class="cs-title">What Our Guests Are Saying</h2>
-    <p class="cs-text">
-      We’re proud to serve Kalamazoo with authentic Mexican flavors and warm hospitality. Here’s what our guests have to say about dining at La Familia Café.
-    </p>
-    <ul class="cs-card-group">
-      <!-- Review 1 -->
-      <li class="cs-item">
-        <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png" alt="profile picture" width="80" height="80" />
-        <p class="cs-item-p">
-          The breakfast burrito was amazing! Everything tasted fresh and homemade. La Familia Café makes you feel right at home.
-        </p>
-        <span class="cs-reviewer">
-          Stacey Tamara Wilder
-          <span class="cs-desc">Local Guest</span>
-        </span>
-        <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16" />
+<section id="reviews-carousel" class="rv" aria-label="Customer reviews">
+  <h2 class="rv__title">Hear What Our Customers Have to Say!</h2>
+  <div class="rv__viewport">
+    <ul class="rv__track">
+      <!-- Slide 1 -->
+      <li class="rv__slide" aria-roledescription="slide" aria-label="1 of 3">
+        <figure class="rv__card">
+          <img class="rv__avatar" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png" alt="" />
+          <blockquote class="rv__quote">
+            “The breakfast burrito was amazing—fresh, hot, and packed. La Familia Café makes you feel right at home.”
+          </blockquote>
+          <figcaption class="rv__meta">
+            <span class="rv__name">Stacey Tamara Wilder</span>
+            <span class="rv__role">Local Guest</span>
+          </figcaption>
+        </figure>
       </li>
-      <!-- Review 2 -->
-      <li class="cs-item">
-        <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png" alt="profile picture" width="80" height="80" />
-        <p class="cs-item-p">
-          Best tacos in town! The service is friendly and quick, and the food always hits the spot. Highly recommend La Familia Café.
-        </p>
-        <span class="cs-reviewer">
-          Kimber Abair
-          <span class="cs-desc">Regular Customer</span>
-        </span>
-        <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16" />
+
+      <!-- Slide 2 -->
+      <li class="rv__slide" aria-roledescription="slide" aria-label="2 of 3">
+        <figure class="rv__card">
+          <img class="rv__avatar" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png" alt="" />
+          <blockquote class="rv__quote">
+            “Best tacos in town! Friendly service and consistently great flavors. Highly recommend the Taco Plate.”
+          </blockquote>
+          <figcaption class="rv__meta">
+            <span class="rv__name">Kimber Abair</span>
+            <span class="rv__role">Regular Customer</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <!-- Slide 3 -->
+      <li class="rv__slide" aria-roledescription="slide" aria-label="3 of 3">
+        <figure class="rv__card">
+          <img class="rv__avatar" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile3.png" alt="" />
+          <blockquote class="rv__quote">
+            “Warm, welcoming, and delicious. Their huevos rancheros are my go-to Saturday treat.”
+          </blockquote>
+          <figcaption class="rv__meta">
+            <span class="rv__name">Jordan P.</span>
+            <span class="rv__role">Weekend Brunch Fan</span>
+          </figcaption>
+        </figure>
       </li>
     </ul>
-    <a aria-label="read more reviews" href="/reviews" class="button-solid">Read More</a>
   </div>
+
+  <button class="rv__btn rv__btn--prev" aria-label="Previous review" type="button">
+    <span aria-hidden="true">‹</span>
+  </button>
+  <button class="rv__btn rv__btn--next" aria-label="Next review" type="button">
+    <span aria-hidden="true">›</span>
+  </button>
+
+  <!-- Screen-reader live region for updates -->
+  <div class="rv__live" aria-live="polite" aria-atomic="true"></div>
 </section>
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -188,4 +206,80 @@ eleventyNavigation:
       }
     });
   }
+
+   // Flex-based carousel (auto-advance + buttons)
+  (() => {
+    const root = document.getElementById('reviews-carousel');
+    if (!root) return;
+
+    const track = root.querySelector('.rv__track');
+    const slides = Array.from(root.querySelectorAll('.rv__slide'));
+    const prevBtn = root.querySelector('.rv__btn--prev');
+    const nextBtn = root.querySelector('.rv__btn--next');
+    const live = root.querySelector('.rv__live');
+
+    let index = 0;
+    const last = slides.length - 1;
+
+    function updateARIA(i){
+      slides.forEach((slide, n) => {
+        slide.setAttribute('aria-hidden', n === i ? 'false' : 'true');
+      });
+      if (live) live.textContent = `Showing review ${i+1} of ${slides.length}`;
+    }
+
+    function goTo(i, {announce=true} = {}){
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(${-100 * index}%)`;
+      updateARIA(index);
+      if (announce && live) {
+        // announcement handled by updateARIA
+      }
+    }
+
+    // Buttons
+    prevBtn?.addEventListener('click', () => goTo(index - 1));
+    nextBtn?.addEventListener('click', () => goTo(index + 1));
+
+    // Auto-advance
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    let timer = null;
+    function start(){
+      if (reduceMotion) return;
+      if (timer) clearInterval(timer);
+      timer = setInterval(() => goTo(index + 1, {announce:false}), 3000);
+    }
+    function stop(){
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    // Pause on hover/focus; resume on leave/blur
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+
+    // Pause when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop(); else start();
+    });
+
+    // Basic swipe on touch
+    let startX = null;
+    root.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive:true});
+    root.addEventListener('touchmove', (e) => {
+      if (startX == null) return;
+      const dx = e.touches[0].clientX - startX;
+      if (Math.abs(dx) > 40){
+        if (dx > 0) goTo(index - 1); else goTo(index + 1);
+        startX = null;
+      }
+    }, {passive:true});
+    root.addEventListener('touchend', () => { startX = null; });
+
+    // Init
+    goTo(0);
+    start();
+  })();
 </script>

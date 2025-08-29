@@ -345,10 +345,18 @@ body.dark-mode .menu .panel .item .price{
     color:#111;
   }
   .ri__grid {
-    display:grid;
-    grid-template-columns: 1fr;
-    gap:24px;
+    display:flex;
+    flex-direction:column;
     align-items:start;
+  }
+  .ri__meta {
+    width:100%;
+  }
+  .ri__about {
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .ri h2 {
     margin:0 0 6px;
@@ -357,7 +365,7 @@ body.dark-mode .menu .panel .item .price{
     color: var(--primaryDark);
   }
   .ri h3 { margin:0 0 8px; font-size:1rem; color:#222; }
-  .ri__text { margin:8px 0 16px; color:#444; }
+  .ri__text { margin:8px 0 16px; color:#444; text-align: center; }
 
   .ri__pill {
     display:inline-block;
@@ -397,6 +405,19 @@ body.dark-mode .menu .panel .item .price{
   .ri__grid {
      grid-template-columns: 1.2fr 1fr;
      margin: 1rem 4rem;
+     flex-direction: row;
+     justify-content: space-around;
+     }
+    .ri__meta {
+    width:40%;
+  }
+  .ri__about {
+    width:40%;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  .ri__grid {
+     margin: 1rem 6rem;
      }
 }
 
