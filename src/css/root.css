@@ -505,10 +505,11 @@ body.dark-mode #navigation #navbar-menu .dropdown.open .dropdown-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding: 1.25rem 0;
   }
   #navigation .logo {
     margin-right: auto;
-    height: 10rem;
+    height: 6rem;
     width: auto;
   }
   #navigation .logo img {
@@ -731,13 +732,13 @@ body.dark-mode #navigation #navbar-menu .dropdown.open .dropdown-menu {
     display: inline-block;
     margin: auto;
     width: auto;
-    height: 3.125em;
+    height: 6rem;
     margin-bottom: 1.875em;
     text-align: center;
   }
   #footer .left-section .logo img {
     width: auto;
-    height: 100%;
+    height: 6rem;
     display: block;
   }
   #footer .left-section p {

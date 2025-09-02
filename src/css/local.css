@@ -503,18 +503,20 @@
   .rv{
     position:relative;
     max-width: 900px;
-    margin: 2.5rem auto 0 auto;
+    margin: 60px auto 0 auto;
     /* padding: 1rem 2rem 4rem 2rem ; */
     padding: clamp(1rem, 3vw, 1.25rem);
     /* background: var(--primary); */
     border-radius: 14px;
     overflow: hidden;
+    padding-bottom: 4rem;
   }
 
   .rv__title {
     font-size: clamp(1.5rem, 4vw, 2rem);
     text-align: center;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
+    margin-bottom: 2rem;
   }
   .rv__viewport{
     overflow: hidden;
@@ -545,7 +547,7 @@
     flex-direction: column;
     gap: .75rem;
     width: min(800px, 100%);
-    margin: 0;
+    margin: 1rem 3rem;
     /* background: blue; */
     border:1px solid var(--primary);
     border-radius: 12px;
