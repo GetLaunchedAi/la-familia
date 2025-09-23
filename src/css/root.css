@@ -284,7 +284,7 @@ body.dark-mode #navigation #navbar-menu .dropdown.open .dropdown-menu {
   }
   #navigation .logo {
     display: inline-block;
-    height: 4rem;
+    height: 8rem;
     width: auto;
   }
   #navigation .logo img {
@@ -509,7 +509,7 @@ body.dark-mode #navigation #navbar-menu .dropdown.open .dropdown-menu {
   }
   #navigation .logo {
     margin-right: auto;
-    height: 6rem;
+    height: 10rem;
     width: auto;
   }
   #navigation .logo img {
@@ -732,13 +732,13 @@ body.dark-mode #navigation #navbar-menu .dropdown.open .dropdown-menu {
     display: inline-block;
     margin: auto;
     width: auto;
-    height: 6rem;
+    height: 8rem;
     margin-bottom: 1.875em;
     text-align: center;
   }
   #footer .left-section .logo img {
     width: auto;
-    height: 6rem;
+    height: 100%;
     display: block;
   }
   #footer .left-section p {
@@ -872,7 +872,7 @@ body.dark-mode #navigation #navbar-menu .dropdown.open .dropdown-menu {
   #footer .left-section .logo {
     text-align: left;
     margin-left: 0;
-    height: 4.375rem;
+    height: 10rem;
   }
   #footer .left-section p {
     text-align: left;
